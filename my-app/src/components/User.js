@@ -1,5 +1,6 @@
 /* rfce yazarak hızlıca oluşturduk bu componenti */
 import React from 'react' 
+import PropTypes from 'prop-types';
 
 function User(props) { {/* props | sadece data | {data : {name,age,city,surname}} */}
     
@@ -28,6 +29,16 @@ function User(props) { {/* props | sadece data | {data : {name,age,city,surname}
 
     </div>
   )
+}
+
+User.propTypes = {
+    data: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number.isRequired,
+        surname: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+      }).isRequired,
+    friends: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default User
