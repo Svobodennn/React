@@ -4,6 +4,12 @@ import User from './components/User';
 
 const name = "Melih";
 let surname = "Saraç";
+const user = {
+  name: "Selami",
+  surname: "Layt",
+  age: 31,
+  city: "Ankara"
+}
 
 const isLoggedIn = true;
 
@@ -29,10 +35,14 @@ function App() {
     {isLoggedIn ? <div>Hoş geldin {name} {surname}</div> : <Header/>}
     <hr />
 
-    <User name="Melih" surname="Saraç" age={22} city="Bursa"/>
+    {/* <User name="Melih" surname="Saraç" age={22} city="Bursa"/>
+    <br />
     <User name="Memati" surname="Ölüm" age={31} city="İstanbul"/>
-
-
+    <br /> */}
+    {/* <User data={user} /> */}
+    <br />
+    <User data={user} friends={["Ahmet","Murat","Ayşe","Fatma"]} />
+    <br />
     </>
   );
 }
