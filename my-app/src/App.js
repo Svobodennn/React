@@ -5,6 +5,7 @@ import User from './components/User';
 const name = "Melih";
 let surname = "Saraç";
 const user = {
+  // title: "Kişi",
   name: "Selami",
   surname: "Layt",
   age: 31,

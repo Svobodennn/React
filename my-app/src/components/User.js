@@ -13,6 +13,7 @@ function User(props) { {/* props | sadece data | {data : {name,age,city,surname}
       {/* <div>İsim: {name} {surname}</div>
       <div>Yaş: {age}</div>
       <div>Şehir: {city}</div> */}
+      <strong>{props.title}</strong>
       <div>İsim: {data.name} {data.surname}</div>
       <div>Yaş: {data.age}</div>
       <div>Şehir: {data.city}</div>
@@ -22,8 +23,8 @@ function User(props) { {/* props | sadece data | {data : {name,age,city,surname}
 
       <h3>Arkadaşları</h3>
       {
-        friends.map((friend, i) => (
-            <div key={i}>{friend}</div>
+        friends.map((friend, index) => (
+            <div key={index}>{friend}</div>
         ))
       }
 
@@ -32,6 +33,7 @@ function User(props) { {/* props | sadece data | {data : {name,age,city,surname}
 }
 
 User.propTypes = {
+    title: PropTypes.string,
     data: PropTypes.shape({
         name: PropTypes.string.isRequired,
         age: PropTypes.number.isRequired,
@@ -39,6 +41,10 @@ User.propTypes = {
         city: PropTypes.string.isRequired,
       }).isRequired,
     friends: PropTypes.arrayOf(PropTypes.string).isRequired,
+}
+
+User.defaultProps = {
+    title: "Kişi",
 }
 
 export default User
