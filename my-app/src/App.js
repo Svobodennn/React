@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header'; // içeri aktarılan isim büyük harfle başlamalı
+import User from './components/User';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -26,6 +27,12 @@ function App() {
     {isLoggedIn ? <div>Hoş geldin {name} {surname}</div> : <div><a href="">Giriş Yapın.</a></div>}
     {/*veya*/}
     {isLoggedIn ? <div>Hoş geldin {name} {surname}</div> : <Header/>}
+    <hr />
+
+    <User name="Melih" surname="Saraç" age={22} city="Bursa"/>
+    <User name="Memati" surname="Ölüm" age={31} city="İstanbul"/>
+
+
     </>
   );
 }
