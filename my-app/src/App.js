@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header'; // içeri aktarılan isim büyük harfle başlamalı
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //  bu şekilde birden fazla elemanı return edebiliriz
+    <> 
+    <Header />
+
+     {/* className kullanılır */}
+    <div className='class_adi'> 
+      <p>melam</p>
     </div>
+
+    <label htmlFor="label_adi"></label> {/* htmlFor kullanılır */}
+
+    <p>selam</p>
+    </>
   );
 }
 
