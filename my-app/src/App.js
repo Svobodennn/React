@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header'; // içeri aktarılan isim büyük harfle başlamalı
 import User from './components/User';
+import Counter from './components/Counter';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -44,6 +45,8 @@ function App() {
     <br />
     <User data={user} friends={["Ahmet","Murat","Ayşe","Fatma"]} />
     <br />
+
+    <Counter/>
     </>
   );
 }
