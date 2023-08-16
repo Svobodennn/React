@@ -4,6 +4,8 @@ import Header from './components/Header'; // içeri aktarılan isim büyük harf
 const name = "Melih";
 let surname = "Saraç";
 
+const isLoggedIn = true;
+
 function App() {
   return (
     <> {/*bu şekilde birden fazla elemanı return edebiliriz*/}
@@ -17,6 +19,13 @@ function App() {
     <label htmlFor="label_adi"></label> {/* htmlFor kullanılır */}
 
     {name} {surname}
+    <br />
+
+    {isLoggedIn ? "Hoş geldin "+name+" "+surname : <a href="">Giriş yapın.</a> } 
+    {/*veya*/}
+    {isLoggedIn ? <div>Hoş geldin {name} {surname}</div> : <div><a href="">Giriş Yapın.</a></div>}
+    {/*veya*/}
+    {isLoggedIn ? <div>Hoş geldin {name} {surname}</div> : <Header/>}
     </>
   );
 }
