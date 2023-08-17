@@ -8,6 +8,7 @@ import Counter2 from './components/Counter2';
 import Counter3 from './components/Counter3';
 import Form from './components/Form';
 import Form2 from './components/Form2';
+import Users from './components/Users';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -48,7 +49,8 @@ function App() {
     <User name="Memati" surname="Ölüm" age={31} city="İstanbul"/>
     <br /> */}
     {/* <User data={user} /> */}
-    <br />
+    
+    {/* <br />
     <User data={user} friends={["Ahmet","Murat","Ayşe","Fatma"]} />
     <br />
 
@@ -65,6 +67,8 @@ function App() {
     <Form2/>
     <hr />
     <Counter3/>
+    <hr /> */}
+    <Users/>
     </>
   );
 }
