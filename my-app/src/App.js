@@ -5,6 +5,7 @@ import Counter from './components/Counter';
 import User2 from './components/User2';
 import Colors from './components/Colors';
 import Counter2 from './components/Counter2';
+import Form from './components/Form';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -56,6 +57,8 @@ function App() {
     <Colors/>
     <hr />
     <Counter2/>
+    <hr />
+    <Form/>
     </>
   );
 }
