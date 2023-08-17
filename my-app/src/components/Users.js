@@ -12,11 +12,15 @@ function Users() {
     }, [])
 
     const getData = async () => {
-      const { data: users } = await axios('https://jsonplaceholder.typicode.com/users') // await verilerin yüklenmesini bekler daha sonra diğer adıma geçer
-      const { data: posts } = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`)
-      setUsers(users)
-      setPosts(posts)
-      setLoading(false)
+      try{ // try catch ile hata yakalama
+        const { data: users } = await axios('https://jsonplaceholder.typicode.com/users') // await verilerin yüklenmesini bekler daha sonra diğer adıma geçer
+        const { data: posts } = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`)
+        setUsers(users)
+        setPosts(posts)
+        setLoading(false)
+      } catch(error) {
+        console.log(error)
+      }
 
     }
 
@@ -30,6 +34,9 @@ function Users() {
     //     axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
     //     .then((res) => setPosts(res.data))
     //   })
+    //   .catch((error) => {
+    //    console.log("error", error) // hata yakalama
+     // })
     //   .finally(() => setLoading(false))
     // }, [])
 
