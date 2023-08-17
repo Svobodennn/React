@@ -4,7 +4,9 @@ function Colors() {
     const [colors, setColors] = useState(["red","green","blue"]);
 
     const handleClick = () => {
-        setColors([...colors,Math.random()]) {/* önceki değerleri korumak için ... şart */}
+        setColors([...colors,Math.random()]); /* önceki değerleri korumak için ... şart */
+        
+        // setColors((prev) => ([...prev,Math.random()])); /* previous state ile */
     }
   return (
     <div>
