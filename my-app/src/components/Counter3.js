@@ -11,7 +11,10 @@ function Counter2() {
     })
 
     useEffect(() => {
-        console.log("Component mount edildi.")
+        console.log("Component mount edildi.");
+        // setInterval(() => {
+        //     console.log("Interval çalışıyor")
+        // }, 1000);
     },[]
     )
 
@@ -22,6 +25,15 @@ function Counter2() {
     useEffect(() => {
         console.log("Value state değişti")
     },[value])
+
+    useEffect(() => {
+        let interval = setInterval(() => {
+            console.log("interval");
+            setCount((prev)=>prev+1)
+        }, 1000);
+
+        return () => clearInterval(interval) //unmount olunca işlemi durduracak
+    },[])
 
   return (
     <div>
