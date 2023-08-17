@@ -6,6 +6,7 @@ import User2 from './components/User2';
 import Colors from './components/Colors';
 import Counter2 from './components/Counter2';
 import Form from './components/Form';
+import Form2 from './components/Form2';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -59,6 +60,8 @@ function App() {
     <Counter2/>
     <hr />
     <Form/>
+    <hr />
+    <Form2/>
     </>
   );
 }
