@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 
 function Users() {
     
@@ -6,11 +7,16 @@ function Users() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(data => setUsers(data))
+        axios('https://jsonplaceholder.typicode.com/users')
+      .then(res => setUsers(res.data))
       .finally(() => setLoading(false))
     }, [])
+    // useEffect(() => {
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(data => setUsers(data))
+    //   .finally(() => setLoading(false))
+    // }, [])
 
   return (
     <div>
