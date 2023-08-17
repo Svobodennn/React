@@ -4,19 +4,44 @@ import axios from 'axios'
 function Users() {
     
     const [users, setUsers] = useState([])
+    const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios('https://jsonplaceholder.typicode.com/users')
-      .then(res => setUsers(res.data))
-      .finally(() => setLoading(false))
+      getData()
     }, [])
+
+    const getData = async () => {
+      const { data: users } = await axios('https://jsonplaceholder.typicode.com/users') // await verilerin yüklenmesini bekler daha sonra diğer adıma geçer
+      const { data: posts } = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`)
+      setUsers(users)
+      setPosts(posts)
+      setLoading(false)
+
+    }
+
+    // !!!aşağıda olduğu gibi bağlantılı veriler için sürekli iç içe axios çağırmaktansa yukarıdaki metodu uyguluyoruz!!!
+
+    // useEffect(() => {
+    //     axios('https://jsonplaceholder.typicode.com/users')
+    //   .then((res) =>{ 
+    //     setUsers(res.data)
+        
+    //     axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
+    //     .then((res) => setPosts(res.data))
+    //   })
+    //   .finally(() => setLoading(false))
+    // }, [])
+
+
     // useEffect(() => {
     //     fetch('https://jsonplaceholder.typicode.com/users')
     //   .then(response => response.json())
     //   .then(data => setUsers(data))
     //   .finally(() => setLoading(false))
     // }, [])
+
+
 
   return (
     <div>
@@ -31,6 +56,16 @@ function Users() {
             ))
         }
      </ul>
+
+     <h2>Posts</h2>
+     <ul>
+        {
+            posts.map((post)=> (
+                <li key={post.id}>{post.title}</li>
+            ))
+        }
+     </ul>
+
     </div>
   )
 }
