@@ -2,3 +2,5 @@ npm install -g create-react-app
 npx create-react-app dosyaadı
 cd dosyaadı
 npm start
+
+npm install axios
