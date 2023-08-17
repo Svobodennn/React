@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header'; // içeri aktarılan isim büyük harfle başlamalı
 import User from './components/User';
 import Counter from './components/Counter';
+import User2 from './components/User2';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -47,6 +48,8 @@ function App() {
     <br />
 
     <Counter/>
+    <hr />
+    <User2/>
     </>
   );
 }
