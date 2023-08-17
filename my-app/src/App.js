@@ -3,6 +3,7 @@ import Header from './components/Header'; // içeri aktarılan isim büyük harf
 import User from './components/User';
 import Counter from './components/Counter';
 import User2 from './components/User2';
+import Colors from './components/Colors';
 
 const name = "Melih";
 let surname = "Saraç";
@@ -50,6 +51,8 @@ function App() {
     <Counter/>
     <hr />
     <User2/>
+    <hr />  
+    <Colors/>
     </>
   );
 }
