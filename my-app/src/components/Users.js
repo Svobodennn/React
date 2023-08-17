@@ -24,6 +24,10 @@ function Users() {
 
     }
 
+    (()=> {
+      console.log("Anonim fonksiyon çalıştı.") //Anonim fonksiyon. Async yapılabilir
+    })();
+
     // !!!aşağıda olduğu gibi bağlantılı veriler için sürekli iç içe axios çağırmaktansa yukarıdaki metodu uyguluyoruz!!!
 
     // useEffect(() => {
