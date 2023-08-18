@@ -16,6 +16,12 @@ function Contact() {
       await new Promise ((r)=> setTimeout(r,1000))
       console.log(values)
 
+      if(values.email === 'test@test.com'){
+        return bag.setErrors({
+          email: 'Bu email adresi zaten kullanılıyor', 
+          message: 'Lütfen geçersiz karakterler kullanmayınız'})
+      }
+
       bag.resetForm() //submitten sonra formu temizler
     },
 
@@ -82,8 +88,8 @@ function Contact() {
               disabled={isSubmitting}
               onChange={handleChange('email')} value={values.email}
               onBlur={handleBlur('email')}
-
             />
+            {errors.email && touched.email &&<div>{errors.email}</div>}
           </div>
 
           <div>
