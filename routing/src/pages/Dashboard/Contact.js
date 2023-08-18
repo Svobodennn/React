@@ -4,15 +4,18 @@ import { Formik, Field, Form, useFormik } from 'formik';
 
 function Contact() {
 
-  const {handleSubmit, handleChange} = useFormik({
+  const {handleSubmit, handleChange, values, isSubmitting} = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
       email: '',
-      message: ""
+      message: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values, bag) => {
+      await new Promise ((r)=> setTimeout(r,1000))
+      console.log(values)
+
+      bag.resetForm() //submitten sonra formu temizler
     }
 
   });
@@ -40,12 +43,12 @@ function Contact() {
           <div>
 
             <label htmlFor="firstName">First Name</label>
-            <input id="firstName" name="firstName" placeholder="Jane" onChange={(e) => handleChange('firstName')} />
+            <input id="firstName" name="firstName" placeholder="Jane" onChange={handleChange('firstName')} value={values.firstName} disabled={isSubmitting}/>
           </div>
 
           <div>
             <label htmlFor="lastName">Last Name</label>
-            <input id="lastName" name="lastName" placeholder="Doe" onChange={(e) => handleChange('lastName')} />
+            <input id="lastName" name="lastName" placeholder="Doe" onChange={handleChange('lastName')} value={values.lastName} disabled={isSubmitting}/>
           </div>
 
           <div>
@@ -56,13 +59,14 @@ function Contact() {
               name="email"
               placeholder="jane@acme.com"
               type="email"
-              onChange={(e) => handleChange('email')}
+              disabled={isSubmitting}
+              onChange={handleChange('email')} value={values.email}
             />
           </div>
 
           <div>
-            <textarea name="message" id="message" placeholder='Mesajınız...' onChange={handleChange("message")}></textarea>
-            <button type="submit">Submit</button>
+            <textarea name="message" id="message" placeholder='Mesajınız...' onChange={handleChange("message")} value={values.message} disabled={isSubmitting}></textarea>
+            <button disabled={isSubmitting} type="submit">Submit</button>
 
           </div>
         </form>
