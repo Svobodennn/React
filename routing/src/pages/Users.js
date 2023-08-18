@@ -15,7 +15,10 @@ function Users() {
       <ul>
       {
         users.map(user=>
-          <li key={user.id}><Link to={`${user.id}`}>{user.name}</Link></li>
+          <li key={user.id}>
+            <Link to={`${user.id}`} state={user}>{user.name}</Link> {/* state ile zaten çektiğimiz bilgileri gönderebiliriz. Bir route'tan başka bir route'a veri gönderir. */}
+            </li>
+          // <li key={user.id}><Link to={`${user.id}`}>{user.name}</Link></li>
         )
       }
       </ul>
