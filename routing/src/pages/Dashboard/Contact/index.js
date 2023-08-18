@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Field, Form, useFormik, validateYupSchema } from 'formik';
+import validation from './validation'
 
 function Contact() {
 
-  const {handleSubmit, handleChange, values, isSubmitting} = useFormik({
+  const {handleSubmit, handleChange, values, isSubmitting, errors} = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -16,7 +17,9 @@ function Contact() {
       console.log(values)
 
       bag.resetForm() //submitten sonra formu temizler
-    }
+    },
+
+    validationSchema: validation // validation işlemi
 
   });
 
@@ -44,6 +47,7 @@ function Contact() {
 
             <label htmlFor="firstName">First Name</label>
             <input id="firstName" name="firstName" placeholder="Jane" onChange={handleChange('firstName')} value={values.firstName} disabled={isSubmitting}/>
+            {errors.firstName && <div>{errors.firstName}</div>}
           </div>
 
           <div>
