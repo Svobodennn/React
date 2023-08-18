@@ -5,7 +5,7 @@ import validation from './validation'
 
 function Contact() {
 
-  const {handleSubmit, handleChange, values, isSubmitting, errors} = useFormik({
+  const {handleSubmit, handleChange, handleBlur, values, isSubmitting, errors, touched} = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -46,13 +46,29 @@ function Contact() {
           <div>
 
             <label htmlFor="firstName">First Name</label>
-            <input id="firstName" name="firstName" placeholder="Jane" onChange={handleChange('firstName')} value={values.firstName} disabled={isSubmitting}/>
-            {errors.firstName && <div>{errors.firstName}</div>}
+            <input 
+            id="firstName" 
+            name="firstName" 
+            placeholder="Jane" 
+            onChange={handleChange('firstName')} 
+            value={values.firstName} 
+            disabled={isSubmitting}
+            onBlur={handleBlur('firstName')}
+            />
+            {errors.firstName && touched.firstName &&<div>{errors.firstName}</div>}
           </div>
 
           <div>
             <label htmlFor="lastName">Last Name</label>
-            <input id="lastName" name="lastName" placeholder="Doe" onChange={handleChange('lastName')} value={values.lastName} disabled={isSubmitting}/>
+            <input 
+            id="lastName" 
+            name="lastName" 
+            placeholder="Doe" 
+            onChange={handleChange('lastName')} 
+            value={values.lastName} 
+            disabled={isSubmitting}
+            onBlur={handleBlur('lastName')}
+            />
           </div>
 
           <div>
@@ -65,11 +81,21 @@ function Contact() {
               type="email"
               disabled={isSubmitting}
               onChange={handleChange('email')} value={values.email}
+              onBlur={handleBlur('email')}
+
             />
           </div>
 
           <div>
-            <textarea name="message" id="message" placeholder='Mesajınız...' onChange={handleChange("message")} value={values.message} disabled={isSubmitting}></textarea>
+            <textarea 
+            name="message" 
+            id="message" 
+            placeholder='Mesajınız...' 
+            onChange={handleChange("message")} 
+            value={values.message} 
+            disabled={isSubmitting}
+            onBlur={handleBlur('message')}
+            ></textarea>
             <button disabled={isSubmitting} type="submit">Submit</button>
 
           </div>
