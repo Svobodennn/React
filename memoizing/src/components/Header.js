@@ -1,11 +1,16 @@
-import React from 'react'
+import React,{memo} from 'react'
 
-function Header() {
+function Header({count, increment}) {
+  console.log("Header component re-render")
   return (
     <div>
-      
+      <h2>Count</h2>
+      <div>
+        Count: {count}
+      </div>
+      <button onClick={increment}>Arttır</button>
     </div>
   )
 }
 
-export default Header
+export default memo(Header)
