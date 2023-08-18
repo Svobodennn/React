@@ -4,3 +4,7 @@ cd dosyaadı
 npm start
 
 npm install axios
+
+npm install react-router-dom@6
+
+npm install formik
