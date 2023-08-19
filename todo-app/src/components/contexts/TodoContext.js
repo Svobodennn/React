@@ -23,7 +23,6 @@ export const TodoProvider = ({children}) => {
         const cloned_todos = [...todos];
 
         const itemIndex = cloned_todos.findIndex((todo) => todo.id === id )
-        console.log(itemIndex)
 
         const item = todos[itemIndex]
 
