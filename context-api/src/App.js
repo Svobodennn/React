@@ -1,4 +1,5 @@
 import ChangeTheme from "./components/ChangeTheme";
+import Footer from "./components/Footer";
 import {ThemeContextProvider} from "./contexts/ThemeContext";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <ThemeContextProvider>
         <ChangeTheme/>
+        <Footer/>
       </ThemeContextProvider>
     </div>
   );
