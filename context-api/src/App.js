@@ -1,12 +1,12 @@
 import ChangeTheme from "./components/ChangeTheme";
-import ThemeContext from "./contexts/ThemeContext";
+import {ThemeContextProvider} from "./contexts/ThemeContext";
 
 function App() {
   return (
     <div className="App">
-      <ThemeContext.Provider value="Light">
+      <ThemeContextProvider>
         <ChangeTheme/>
-      </ThemeContext.Provider>
+      </ThemeContextProvider>
     </div>
   );
 }
