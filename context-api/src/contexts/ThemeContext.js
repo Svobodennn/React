@@ -38,4 +38,4 @@ export const useTheme = () => {
     return context;
 }
 
-export default ThemeContext
+// export default ThemeContext | dışarııda bu tanımı artık kullanmadığımızz için kaldırabiliriz

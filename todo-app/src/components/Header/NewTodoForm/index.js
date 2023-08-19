@@ -1,9 +1,12 @@
 import React from 'react'
 import { Formik, Field, Form } from "formik";
 import validationSchema from './validation'
-
+import { useTodo } from '../../contexts/TodoContext';
+import {v4 as uuidv4} from "uuid"
 
 function NewTodoForm() {
+
+    const {addTodo} = useTodo()
 
 
     return (
@@ -12,8 +15,9 @@ function NewTodoForm() {
                 text: "",
             }}
             onSubmit={(values, bag) => {
-                console.log(values)
 
+                // setTodos(prev => [...prev, {id: uuidv4(), text:values.text, completed:false}])
+                addTodo(values.text)
                 bag.resetForm()
             }}
             validationSchema={validationSchema}
