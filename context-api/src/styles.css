@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    padding: 10px;
+}
+
+.Dark {
+    background-color: black
+}
+
+.Dark * {
+    color: white;
+}
+
+.Dark button {
+    color: black;
+}
