@@ -12,3 +12,5 @@ npm install formik
 npm install yup
 
 npm install uuid
+
+npx create-react-library, (package name checker)
