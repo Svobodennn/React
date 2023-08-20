@@ -19,3 +19,5 @@ npm install --global surge
 npm run build
 cd build
 surge
+
+npm install react-intl
