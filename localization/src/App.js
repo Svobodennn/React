@@ -9,7 +9,7 @@ const messages = {
   },
   'en-US': {
     title: "Hello World!",
-    description: "You have 3 new messages."
+    description: "You have {count} new messages." //parametre kullanımı
 
   }
 }
@@ -31,7 +31,7 @@ function App() {
       <p>
       <FormattedMessage id="title"/>
       <p>
-        <FormattedMessage id='description'/>
+        <FormattedMessage id='description' values={{count:5}}/> {/*parametre gönderimi */}
 
       </p>
       <br /><br />
