@@ -21,3 +21,6 @@ cd build
 surge
 
 npm install react-intl
+
+
+ecommerce app > chakra ui 
